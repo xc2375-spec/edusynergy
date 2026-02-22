@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>春节专题 | 心能教育 EduSynergy</title>
+  <meta name="description" content="春节聚餐：祝福话与待人接物——可直接使用的祝福模板与情境应对卡片（中英对照）。" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-mode="bi">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="EduSynergy Home">
+        <span class="brand-mark">心能</span>
+        <span class="brand-name">心能教育</span>
+        <span class="brand-sep">·</span>
+        <span class="brand-name-en">EduSynergy</span>
+      </a>
+
+      <nav class="top-actions">
+        <a class="navlink" href="topics.html">
+          <span class="zh">专题</span><span class="en">Topics</span>
+        </a>
+        <a class="navlink" href="index.html">
+          <span class="zh">首页</span><span class="en">Home</span>
+        </a>
+        <button class="chip" id="modeToggle" type="button" aria-label="Bilingual toggle">
+          <span class="zh">中英</span><span class="en">BI</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero compact">
+      <div class="hero-card">
+        <h1>
+          <span class="zh">春节聚餐：祝福话与待人接物</span>
+          <span class="en">Spring Festival Meals: Blessings & Social Etiquette</span>
+        </h1>
+        <p class="lead">
+          <span class="zh">不是背祝福话，而是练习：看见情境、表达关系、守住边界、稳定情绪。</span>
+          <span class="en">Not memorizing lines—practicing: reading the room, expressing care, holding boundaries, and regulating emotions.</span>
+        </p>
+        <div class="pill-row">
+          <span class="pill"><span class="zh">祝福句式工具</span><span class="en">Template tool</span></span>
+          <span class="pill"><span class="zh">情境应对卡片</span><span class="en">Coping cards</span></span>
+          <span class="pill"><span class="zh">亲子对话三问</span><span class="en">3 family prompts</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="zh">这在培养哪些能力？</span><span class="en">What skills does this build?</span></h2>
+      <div class="grid">
+        <div class="card soft">
+          <h3><span class="zh">情境判断</span><span class="en">Situational awareness</span></h3>
+          <p><span class="zh">看懂对象与场合，决定怎么说、说多少。</span><span class="en">Match your words to the person and the context—how much to say, and how.</span></p>
+        </div>
+        <div class="card soft">
+          <h3><span class="zh">关系表达</span><span class="en">Relational expression</span></h3>
+          <p><span class="zh">把尊重、感谢与关心放进语言里。</span><span class="en">Put respect, gratitude, and care into language.</span></p>
+        </div>
+        <div class="card soft">
+          <h3><span class="zh">边界与调节</span><span class="en">Boundaries & regulation</span></h3>
+          <p><span class="zh">面对追问与比较，礼貌回应、保护自尊。</span><span class="en">Respond politely to pressure, protect self-respect, stay steady.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="zh">祝福句式工具：一句就够</span><span class="en">Blessing template tool: one line is enough</span></h2>
+      <p class="muted">
+        <span class="zh">结构：称呼 + 具体观察 + 祝愿</span>
+        <span class="en">Formula: greeting + specific observation + good wish</span>
+      </p>
+
+      <div class="toolbox">
+        <label class="label" for="who"><span class="zh">对象</span><span class="en">For</span></label>
+        <select id="who" class="input">
+          <option value="elder"><span class="zh">长辈</span><span class="en">Elders</span></option>
+          <option value="teacher"><span class="zh">老师/长辈朋友</span><span class="en">Teacher / family friend</span></option>
+          <option value="peer"><span class="zh">同辈</span><span class="en">Peers</span></option>
+          <option value="kid"><span class="zh">小朋友</span><span class="en">Kids</span></option>
+        </select>
+
+        <label class="label" for="tone"><span class="zh">语气</span><span class="en">Tone</span></label>
+        <select id="tone" class="input">
+          <option value="steady"><span class="zh">稳重</span><span class="en">Steady</span></option>
+          <option value="light"><span class="zh">轻松</span><span class="en">Light</span></option>
+          <option value="playful"><span class="zh">俏皮（不冒犯版）</span><span class="en">Playful (respectful)</span></option>
+        </select>
+
+        <button class="btn primary full" id="genBlessing" type="button">
+          <span class="zh">生成一句</span><span class="en">Generate one</span>
+        </button>
+
+        <div class="output" aria-live="polite">
+          <div class="output-title"><span class="zh">示例</span><span class="en">Example</span></div>
+          <div id="blessingOut" class="output-text">
+            <span class="zh">点“生成一句”试试。</span><span class="en">Tap “Generate one” to try.</span>
+          </div>
+          <div class="cta-row">
+            <button class="chip" id="copyBlessing" type="button"><span class="zh">复制</span><span class="en">Copy</span></button>
+            <button class="chip" id="newBlessing" type="button"><span class="zh">换一句</span><span class="en">New one</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="zh">情境应对卡片（点开）</span><span class="en">Coping cards (tap to expand)</span></h2>
+
+      <details class="detail">
+        <summary><span class="zh">被问成绩/排名：怎么礼貌回应？</span><span class="en">Asked about grades/rank: how to respond politely?</span></summary>
+        <div class="detail-body">
+          <p class="muted"><span class="zh">结构：事实 + 方向 + 礼貌收束</span><span class="en">Structure: fact + direction + polite close</span></p>
+          <ul>
+            <li><span class="zh">“今年在努力把基础打牢，慢慢有进步，谢谢您关心。”</span><span class="en">“I’m strengthening my fundamentals this year and making steady progress—thanks for asking.”</span></li>
+            <li><span class="zh">“我在探索更适合自己的方法，最近在坚持做复盘。”</span><span class="en">“I’m finding methods that fit me better, and I’ve been reflecting regularly.”</span></li>
+            <li><span class="zh">“谢谢关心！您最近怎么样？”（轻轻转话题）</span><span class="en">“Thanks for caring—how have you been lately?” (gentle redirect)</span></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary><span class="zh">被比较：别人家孩子更优秀？</span><span class="en">Compared to others: “Other kids are better”</span></summary>
+        <div class="detail-body">
+          <p class="muted"><span class="zh">目标：不对抗、不自贬、保持自尊。</span><span class="en">Goal: no fight, no self-put-down, keep dignity.</span></p>
+          <ul>
+            <li><span class="zh">“TA 很厉害，我也在找到自己的节奏。”</span><span class="en">“They’re impressive. I’m also finding my own pace.”</span></li>
+            <li><span class="zh">“我更关注把自己的短板补起来，慢慢来。”</span><span class="en">“I’m focusing on improving my weaker areas—step by step.”</span></li>
+            <li><span class="zh">“谢谢提醒，我会记在心里。”（收束）</span><span class="en">“Thanks for the reminder—I’ll keep it in mind.” (close)</span></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary><span class="zh">被夸奖：怎么接住不尴尬？</span><span class="en">Complimented: how to accept without awkwardness?</span></summary>
+        <div class="detail-body">
+          <p class="muted"><span class="zh">结构：感谢 + 归因努力/他人 + 轻谦</span><span class="en">Structure: thanks + effort/others + gentle humility</span></p>
+          <ul>
+            <li><span class="zh">“谢谢您，我也在慢慢学，还需要多练。”</span><span class="en">“Thank you—I’m still learning and practicing.”</span></li>
+            <li><span class="zh">“谢谢！主要是最近更认真安排时间了。”</span><span class="en">“Thanks! I’ve been managing my time more carefully.”</span></li>
+            <li><span class="zh">“谢谢夸奖，您这么说我更有动力了。”</span><span class="en">“That’s kind of you—hearing this motivates me.”</span></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary><span class="zh">不想聊天但要有礼貌：怎么“短而稳”？</span><span class="en">Don’t want to chat, but stay polite: short & steady?</span></summary>
+        <div class="detail-body">
+          <p class="muted"><span class="zh">结构：礼貌回应 + 一句话近况 + 结束语</span><span class="en">Structure: polite reply + one-line update + closing</span></p>
+          <ul>
+            <li><span class="zh">“谢谢关心，我最近挺好的，祝您新年顺利！”</span><span class="en">“Thanks for asking—I’m doing fine. Wishing you a great new year!”</span></li>
+            <li><span class="zh">“我最近在忙学校的事，改天再跟您细聊。”</span><span class="en">“I’ve been busy with school—let’s catch up another time.”</span></li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2><span class="zh">亲子对话：三问就够（饭前 10 分钟）</span><span class="en">Family conversation: 3 prompts (10 minutes before the meal)</span></h2>
+      <ol class="list">
+        <li><span class="zh"><b>什么样的祝福你觉得真诚？</b>（让孩子说“喜欢/不喜欢”的理由）</span><span class="en"><b>What kind of blessing feels sincere to you?</b> (Ask: why?)</span></li>
+        <li><span class="zh"><b>什么问题最容易让你尴尬？</b>（一起准备一句回应）</span><span class="en"><b>Which questions feel awkward?</b> (Craft one response together.)</span></li>
+        <li><span class="zh"><b>如果你是主人，你希望客人怎么对你？</b>（练角色转换）</span><span class="en"><b>If you were the host, what would you want from guests?</b> (Practice perspective-taking.)</span></li>
+      </ol>
+      <div class="note">
+        <span class="zh"><b>小规则：</b>不纠正表达风格，只纠正“是否尊重/是否有边界”。让孩子保留自己的声音。</span>
+        <span class="en"><b>Rule:</b> Don’t correct “style”—only check respect and boundaries. Keep their voice.</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn ghost" href="topics.html"><span class="zh">回到专题</span><span class="en">Back to Topics</span></a>
+        <a class="btn ghost" href="index.html"><span class="zh">回到首页</span><span class="en">Back to Home</span></a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="muted small">© <span id="year"></span> EduSynergy</div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
