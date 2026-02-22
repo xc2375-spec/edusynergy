@@ -1,0 +1,51 @@
+
+:root{
+  --warm-cream:#f7f3ee;
+  --warm-beige:#efe7de;
+  --warm-peach:#f4ddd3;
+  --warm-sage:#dfe8e2;
+  --warm-sand:#efe1c7;
+  --warm-lavender:#e6e0f0;
+  --text-dark:#2b2b2b;
+}
+
+body{
+  margin:0;
+  background:var(--warm-cream);
+  color:var(--text-dark);
+  font-family:"Times New Roman",Times,serif;
+  line-height:1.6;
+}
+
+.zh{font-family:"KaiTi","STKaiti","Kaiti SC","DFKai-SB","楷体",serif;}
+.en{font-family:"Times New Roman",Times,serif;}
+
+.container{max-width:980px;margin:auto;padding:16px}
+
+.hero-card{
+  background:var(--warm-beige);
+  padding:22px;
+  border-radius:16px;
+  margin:12px 0 24px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  margin:16px 0;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.section-network{background:var(--warm-sand)}
+.section-prediction{background:var(--warm-peach)}
+.section-social{background:var(--warm-sage)}
+.section-mind{background:var(--warm-lavender)}
+
+@media (max-width:700px){
+  .container{padding:12px}
+  .hero-card{padding:16px}
+  .card{padding:14px}
+  h1{font-size:22px}
+  h2{font-size:18px}
+}
