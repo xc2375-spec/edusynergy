@@ -1,51 +1,333 @@
+/* =========================================================
+   EduSynergy 2026 Warm Energy Theme (Bilingual)
+   - Chinese: elegant Kai-style stack (best effort cross-device)
+   - English: Times New Roman
+   - Section colors: warm + grounded + empowering
+   - Mobile-first responsive, clean cards, soft shadows
+   - Supports app.js mode toggle via body[data-mode="bi|zh|en"]
+   ========================================================= */
 
+/* ---------- 1) 2026 Color System ---------- */
 :root{
-  --warm-cream:#f7f3ee;
-  --warm-beige:#efe7de;
-  --warm-peach:#f4ddd3;
-  --warm-sage:#dfe8e2;
-  --warm-sand:#efe1c7;
-  --warm-lavender:#e6e0f0;
-  --text-dark:#2b2b2b;
+  /* Base */
+  --bg-main: #F6F2EC;          /* oat-cream background */
+  --bg-soft: #EFE7DE;          /* warm beige */
+  --card:    #FFFFFF;
+  --text:    #242424;
+  --muted:   #5C5C5C;
+  --hairline:#E8DED3;
+
+  /* Accents */
+  --accent:  #C86F4A;          /* warm terracotta */
+  --accent2: #8E5E4A;          /* deeper terracotta */
+
+  /* Section palette (warm, grounded, 2026 vibe) */
+  --sec-reading:    #EDE1D3;   /* calm oat */
+  --sec-network:    #E8D9C5;   /* warm sand */
+  --sec-prediction: #F1D6C6;   /* apricot glow */
+  --sec-social:     #D9E4DD;   /* sage safety */
+  --sec-mind:       #E3DDED;   /* warm gray-lavender */
+  --sec-reality:    #EFD3D7;   /* dawn rose */
+  --sec-physics:    #E7DDCF;   /* steady buff */
+  --sec-biology:    #DDE7E1;   /* soft green */
+
+  /* Radius & shadow */
+  --r-lg: 22px;
+  --r-md: 16px;
+  --r-sm: 12px;
+  --shadow: 0 6px 18px rgba(0,0,0,.06);
+  --shadow-soft: 0 3px 10px rgba(0,0,0,.05);
+
+  /* Layout */
+  --container: 980px;
 }
 
+/* ---------- 2) Typography ---------- */
+/* English */
 body{
   margin:0;
-  background:var(--warm-cream);
-  color:var(--text-dark);
-  font-family:"Times New Roman",Times,serif;
-  line-height:1.6;
+  background: var(--bg-main);
+  color: var(--text);
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-.zh{font-family:"KaiTi","STKaiti","Kaiti SC","DFKai-SB","楷体",serif;}
-.en{font-family:"Times New Roman",Times,serif;}
+/* Chinese (best-effort “good-looking” Kai across devices)
+   Note: KaiTi on Windows is sometimes rough; STKaiti/Kaiti SC on macOS looks better.
+*/
+.zh{
+  font-family:
+    "STKaiti",          /* macOS classic */
+    "Kaiti SC",         /* macOS newer */
+    "KaiTi",            /* Windows */
+    "DFKai-SB",         /* Traditional (some systems) */
+    "BiauKai",          /* some CJK setups */
+    "Songti SC",        /* fallback serif */
+    "Noto Serif SC",    /* if user has it */
+    serif;
+  letter-spacing: .2px;
+}
 
-.container{max-width:980px;margin:auto;padding:16px}
+/* English */
+.en{
+  font-family: "Times New Roman", Times, serif;
+}
 
+/* Optional (future): If you later add a webfont file for Kai,
+   you can uncomment this @font-face and set .zh { font-family: "EduSynergyKai", ... }
+*/
+/*
+@font-face{
+  font-family: "EduSynergyKai";
+  src: url("fonts/EduSynergyKai.woff2") format("woff2");
+  font-display: swap;
+}
+.zh{ font-family:"EduSynergyKai","STKaiti","Kaiti SC","KaiTi",serif; }
+*/
+
+h1,h2,h3{
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+h1{ font-size: 30px; }
+h2{ font-size: 22px; }
+h3{ font-size: 18px; }
+
+p{ margin: 10px 0; }
+a{ color: inherit; text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+.muted{ color: var(--muted); }
+.small{ font-size: 12px; }
+
+/* ---------- 3) Layout ---------- */
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 18px 16px;
+}
+
+/* ---------- 4) Topbar / Brand ---------- */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(246,242,236,.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hairline);
+}
+.topbar-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.brand{
+  display:flex;
+  align-items:baseline;
+  gap: 8px;
+}
+.brand-mark{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--sec-reading);
+  border: 1px solid var(--hairline);
+  font-weight: 700;
+}
+.brand-name{ font-weight: 700; }
+.brand-sep{ opacity:.6; }
+.brand-name-en{ opacity:.85; }
+
+.top-actions{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.navlink{
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.navlink:hover{
+  border-color: var(--hairline);
+  background: rgba(255,255,255,.6);
+  text-decoration: none;
+}
+
+.chip{
+  cursor:pointer;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  background: rgba(255,255,255,.75);
+  box-shadow: var(--shadow-soft);
+  font-weight: 700;
+}
+.chip:active{ transform: translateY(1px); }
+
+/* ---------- 5) Hero / Cards ---------- */
+.hero.compact .hero-card{ margin-top: 14px; }
 .hero-card{
-  background:var(--warm-beige);
-  padding:22px;
-  border-radius:16px;
-  margin:12px 0 24px;
+  background: var(--bg-soft);
+  border-radius: var(--r-lg);
+  padding: 26px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(0,0,0,.03);
 }
 
 .card{
-  background:white;
-  padding:18px;
-  border-radius:14px;
-  margin:16px 0;
-  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  background: var(--card);
+  border-radius: var(--r-md);
+  padding: 20px;
+  margin: 16px 0;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,.03);
 }
 
-.section-network{background:var(--warm-sand)}
-.section-prediction{background:var(--warm-peach)}
-.section-social{background:var(--warm-sage)}
-.section-mind{background:var(--warm-lavender)}
-
-@media (max-width:700px){
-  .container{padding:12px}
-  .hero-card{padding:16px}
-  .card{padding:14px}
-  h1{font-size:22px}
-  h2{font-size:18px}
+.note{
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--r-sm);
+  background: rgba(255,255,255,.55);
+  border: 1px dashed rgba(0,0,0,.08);
 }
+
+/* Pills */
+.pill-row{ margin-top: 12px; display:flex; flex-wrap:wrap; gap:8px; }
+.pill{
+  display:inline-flex;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.06);
+  background: rgba(255,255,255,.60);
+  font-size: 12px;
+}
+
+/* Buttons */
+.cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  background: rgba(255,255,255,.72);
+  box-shadow: var(--shadow-soft);
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn:hover{ background: rgba(255,255,255,.92); text-decoration:none; }
+.btn.primary{
+  background: rgba(200,111,74,.14);
+  border-color: rgba(200,111,74,.35);
+}
+.btn.ghost{
+  background: rgba(255,255,255,.55);
+}
+
+/* Lists */
+.list{ padding-left: 18px; margin: 10px 0; }
+.list li{ margin: 8px 0; }
+
+/* ---------- 6) Topic Grid ---------- */
+.grid.topics{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+
+.topic-card{
+  padding: 18px;
+  border-radius: var(--r-md);
+}
+.topic-title a:hover{ text-decoration:none; }
+.topic-title{ margin: 8px 0 6px; }
+.topic-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.topic-tag{
+  display:inline-flex;
+  gap:6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.06);
+  background: rgba(255,255,255,.58);
+  font-size: 12px;
+}
+
+/* ---------- 7) Section Color Helpers (use on .card or sections) ---------- */
+.section-reading{    background: var(--sec-reading); }
+.section-network{    background: var(--sec-network); }
+.section-prediction{ background: var(--sec-prediction); }
+.section-social{     background: var(--sec-social); }
+.section-mind{       background: var(--sec-mind); }
+.section-reality{    background: var(--sec-reality); }
+.section-physics{    background: var(--sec-physics); }
+.section-biology{    background: var(--sec-biology); }
+
+/* Make colored cards still feel “card-like” */
+.section-reading,
+.section-network,
+.section-prediction,
+.section-social,
+.section-mind,
+.section-reality,
+.section-physics,
+.section-biology{
+  border: 1px solid rgba(0,0,0,.03);
+}
+
+/* ---------- 8) Footer ---------- */
+.footer{ padding: 18px 0 28px; }
+.footer-inner{
+  border-top: 1px solid var(--hairline);
+  padding-top: 14px;
+}
+
+/* ---------- 9) Bilingual Mode Support (works with your app.js) ---------- */
+body[data-mode="zh"] .en{ display:none !important; }
+body[data-mode="en"] .zh{ display:none !important; }
+body[data-mode="bi"] .zh,
+body[data-mode="bi"] .en{ display:inline; }
+
+/* For block elements with zh/en spans */
+p .zh, p .en,
+li .zh, li .en,
+h1 .zh, h1 .en,
+h2 .zh, h2 .en,
+h3 .zh, h3 .en{
+  display: inline;
+}
+
+/* When you want each language on its own line, add .stack */
+.stack .zh, .stack .en{ display:block; }
+
+/* ---------- 10) Mobile Responsive ---------- */
+@media (max-width: 760px){
+  .container{ padding: 14px 12px; }
+  .hero-card{ padding: 18px; border-radius: 18px; }
+  .card{ padding: 16px; border-radius: 16px; }
+  h1{ font-size: 22px; }
+  h2{ font-size: 18px; }
+  .grid.topics{ grid-template-columns: 1fr; }
+  .topbar-inner{ padding: 10px 0; }
+  .brand-name-en, .brand-sep{ display:none; } /* mobile cleaner */
+}
+
+/* ---------- 11) Comfort tweaks ---------- */
+.lead{ font-size: 16px; }
+.hero-card .lead{ margin-top: 8px; }
