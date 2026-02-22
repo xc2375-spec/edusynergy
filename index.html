@@ -4,20 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>心能教育 EduSynergy</title>
-  <meta name="description" content="EduSynergy：SEL × 学习者能量加油站。连接情绪、身体与学习。" />
+  <meta name="description" content="心能教育：连接能力、情绪与现实的长期成长框架。" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body data-mode="bi">
 
-  <!-- 更新标记（确认你确实在看新页面） -->
+  <!-- 更新确认标记：看到它=你确实替换成功 -->
   <div style="position:fixed;top:10px;left:10px;z-index:99999;background:#ffefc2;padding:8px 10px;border-radius:10px;font-weight:700">
-    ✅ INDEX UPDATED
+    ✅ INDEX STRUCTURE v2
   </div>
 
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="EduSynergy Home">
         <span class="brand-mark">心能</span>
         <span class="brand-name">心能教育</span>
         <span class="brand-sep">·</span>
@@ -26,13 +26,10 @@
 
       <nav class="top-actions">
         <a class="navlink" href="topics.html">
-          <span class="zh">专题</span>
-          <span class="en">Topics</span>
+          <span class="zh">专题</span><span class="en">Topics</span>
         </a>
-
-        <button class="chip" id="modeToggle">
-          <span class="zh">中英</span>
-          <span class="en">BI</span>
+        <button class="chip" id="modeToggle" type="button" aria-label="Bilingual toggle">
+          <span class="zh">中英</span><span class="en">BI</span>
         </button>
       </nav>
     </div>
@@ -40,47 +37,41 @@
 
   <main class="container">
 
-    <!-- Hero -->
+    <!-- 顶部：品牌理念 -->
     <section class="hero">
-      <div class="hero-card section-social">
+      <div class="hero-card section-network">
         <h1 class="stack">
-          <span class="zh">SEL × 学习者能量加油站</span>
-          <span class="en">SEL × Learner Energy Station</span>
+          <span class="zh">心能教育</span>
+          <span class="en">EduSynergy</span>
         </h1>
 
         <p class="lead stack">
           <span class="zh">
-            把情绪、身体与学习连接起来：从“身体预算”出发，练共同调节、预测与重构，
-            让学习在温暖与力量里持续发生。
+            心能教育搭建能力、情绪与现实连接的长期成长框架，
+            推动认知与自我整合升级，让学习成为自我形成的过程。
           </span>
           <span class="en">
-            Connect emotion, body, and learning: start from the body budget,
-            practice co-regulation, prediction, and reframing—so learning can
-            sustainably happen with warmth and strength.
+            EduSynergy builds a long-term developmental framework connecting capability,
+            emotion, and reality—supporting cognitive and self-integration, so learning
+            becomes a process of self-formation.
           </span>
         </p>
 
         <div class="pill-row">
-          <span class="pill"><span class="zh">身体预算</span><span class="en">Body budget</span></span>
-          <span class="pill"><span class="zh">共同调节</span><span class="en">Co-regulation</span></span>
-          <span class="pill"><span class="zh">预测与重构</span><span class="en">Prediction</span></span>
+          <span class="pill"><span class="zh">能力</span><span class="en">Capability</span></span>
+          <span class="pill"><span class="zh">情绪</span><span class="en">Emotion</span></span>
+          <span class="pill"><span class="zh">现实</span><span class="en">Reality</span></span>
         </div>
 
         <div class="cta-row">
-          <a class="btn primary" href="topic-sel.html">
-            <span class="zh">进入 SEL</span>
-            <span class="en">Enter SEL</span>
-          </a>
-
           <a class="btn" href="topics.html">
-            <span class="zh">所有专题</span>
-            <span class="en">All Topics</span>
+            <span class="zh">进入专题</span><span class="en">Explore Topics</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 三大专题入口 -->
+    <!-- 三大专题入口：并排 -->
     <section class="card">
       <h2 class="stack">
         <span class="zh">三大专题</span>
@@ -91,44 +82,77 @@
 
         <!-- SEL -->
         <article class="card topic-card section-social">
+          <div class="topic-meta">
+            <span class="topic-tag"><span class="zh">专题</span><span class="en">Track</span></span>
+            <span class="topic-tag"><span class="zh">SEL</span><span class="en">SEL</span></span>
+          </div>
+
           <h3 class="topic-title">
             <a href="topic-sel.html">
               <span class="zh">SEL × 学习者能量加油站</span>
               <span class="en">SEL × Learner Energy Station</span>
             </a>
           </h3>
-          <p class="muted stack">
-            <span class="zh">共读、节日礼仪、SEL工具箱</span>
-            <span class="en">Book club, rituals, toolkit</span>
-          </p>
+
+          <ul class="list">
+            <li class="stack"><span class="zh">共读（8篇）</span><span class="en">Book club (8)</span></li>
+            <li class="stack"><span class="zh">节日礼仪与祝福（小加餐）</span><span class="en">Festival mini add-ons</span></li>
+            <li class="stack"><span class="zh">SEL工具箱（持续更新）</span><span class="en">Growing toolkit</span></li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="btn primary" href="topic-sel.html"><span class="zh">进入</span><span class="en">Enter</span></a>
+          </div>
         </article>
 
         <!-- Physics -->
         <article class="card topic-card section-physics">
+          <div class="topic-meta">
+            <span class="topic-tag"><span class="zh">专题</span><span class="en">Track</span></span>
+            <span class="topic-tag"><span class="zh">物理</span><span class="en">Physics</span></span>
+          </div>
+
           <h3 class="topic-title">
             <a href="topic-physics.html">
-              <span class="zh">物理</span>
-              <span class="en">Physics</span>
+              <span class="zh">物理：直觉 × 图像 × 推导</span>
+              <span class="en">Physics: Intuition × Diagrams × Derivations</span>
             </a>
           </h3>
-          <p class="muted stack">
-            <span class="zh">直觉 × 图像 × 推导</span>
-            <span class="en">Intuition × Diagrams × Derivations</span>
-          </p>
+
+          <ul class="list">
+            <li class="stack"><span class="zh">力学（运动、力、能量、动量）</span><span class="en">Mechanics</span></li>
+            <li class="stack"><span class="zh">电磁（场、势、回路、感应）</span><span class="en">E&M</span></li>
+            <li class="stack"><span class="zh">波与光学、热学、现代物理</span><span class="en">Waves/Optics, Thermo, Modern</span></li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="btn primary" href="topic-physics.html"><span class="zh">进入</span><span class="en">Enter</span></a>
+          </div>
         </article>
 
         <!-- Biology -->
         <article class="card topic-card section-biology">
+          <div class="topic-meta">
+            <span class="topic-tag"><span class="zh">专题</span><span class="en">Track</span></span>
+            <span class="topic-tag"><span class="zh">生物</span><span class="en">Biology</span></span>
+          </div>
+
           <h3 class="topic-title">
             <a href="topic-biology.html">
-              <span class="zh">生物</span>
-              <span class="en">Biology</span>
+              <span class="zh">生物：机制 × 证据 × 表达</span>
+              <span class="en">Biology: Mechanism × Evidence × Expression</span>
             </a>
           </h3>
-          <p class="muted stack">
-            <span class="zh">机制 × 证据 × 表达</span>
-            <span class="en">Mechanism × Evidence × Expression</span>
-          </p>
+
+          <ul class="list">
+            <li class="stack"><span class="zh">细胞与能量（结构、运输、呼吸/光合）</span><span class="en">Cell & Energy</span></li>
+            <li class="stack"><span class="zh">遗传（孟德尔、分子遗传、生物技术）</span><span class="en">Genetics</span></li>
+            <li class="stack"><span class="zh">进化与生态、人体系统（可选）</span><span class="en">Evolution & Ecology</span></li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="btn primary" href="topic-biology.html"><span class="zh">进入</span><span class="en">Enter</span></a>
+          </div>
         </article>
 
       </div>
