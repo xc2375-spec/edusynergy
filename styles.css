@@ -10,10 +10,11 @@
   --text-main: #2c2c2c;
   --text-muted: #6a6a6a;
 
+  /* Warm sections */
   --sec-network: #E8D9C5;   /* brand hero */
   --sec-social:  #D9E4DD;   /* SEL */
-  --sec-physics: #F1D6C6;   /* physics */
-  --sec-biology: #E3DDED;   /* biology */
+  --sec-physics: #F1D6C6;   /* Physics */
+  --sec-biology: #E3DDED;   /* Biology */
 
   --accent: #6b8fa3;
   --accent-soft: #d6e4ec;
@@ -43,13 +44,13 @@ body{
     serif;
 }
 
-/* Chinese Fangsong priority */
+/* Chinese Fangsong priority (multi-platform fallbacks) */
 .zh{
   font-family:
-    "STFangsong",
-    "FangSong",
-    "FangSong_GB2312",
-    "STSong",
+    "STFangsong",        /* macOS (if available) */
+    "FangSong",          /* common name */
+    "FangSong_GB2312",   /* Windows common */
+    "STSong",            /* fallback */
     "Songti SC",
     "SimSun",
     serif;
@@ -99,7 +100,7 @@ body{
 
 .brand-name-en{
   font-style:italic;
-  opacity:.8;
+  opacity:.85;
 }
 
 .top-actions{
@@ -122,6 +123,12 @@ body{
   cursor:pointer;
 }
 
+/* ===== Sections Color Classes ===== */
+.section-network{ background:var(--sec-network); }
+.section-social{  background:var(--sec-social); }
+.section-physics{ background:var(--sec-physics); }
+.section-biology{ background:var(--sec-biology); }
+
 /* ===== Hero ===== */
 .hero{
   margin-top:24px;
@@ -133,53 +140,51 @@ body{
   box-shadow:var(--shadow);
 }
 
-.section-network{background:var(--sec-network)}
-.section-social{background:var(--sec-social)}
-.section-physics{background:var(--sec-physics)}
-.section-biology{background:var(--sec-biology)}
-
 h1{
   font-size:32px;
   margin:0 0 12px;
-  font-weight:600;
+  font-weight:650;
 }
 
 h2{
   font-size:24px;
   margin:0 0 16px;
+  font-weight:650;
 }
 
 h3{
   font-size:20px;
   margin:10px 0 6px;
+  font-weight:650;
 }
 
 .lead{
   font-size:17px;
-  margin-bottom:18px;
+  margin:0 0 18px;
 }
 
 .note{
-  background:rgba(255,255,255,0.5);
+  background:rgba(255,255,255,0.55);
   padding:14px 16px;
-  border-radius:10px;
+  border-radius:12px;
   margin:14px 0 18px;
 }
 
+/* bilingual stack display */
 .stack .zh{display:block}
-.stack .en{display:block; opacity:.85}
+.stack .en{display:block; opacity:.86}
 
 .pill-row{
   display:flex;
   flex-wrap:wrap;
-  gap:8px;
+  gap:10px;
   margin:14px 0 18px;
 }
 
 .pill{
   background:#fff;
   border-radius:999px;
-  padding:4px 12px;
+  padding:6px 12px;
   font-size:13px;
   box-shadow:0 1px 3px rgba(0,0,0,0.08);
 }
@@ -193,18 +198,26 @@ h3{
   margin-top:26px;
 }
 
+/* grid */
 .grid.topics{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:22px;
 }
 
+/* topic card (IMPORTANT: allow section color to show) */
 .topic-card{
   padding:22px 18px 18px;
   border-radius:14px;
   display:flex;
   flex-direction:column;
   gap:8px;
+  background:transparent; /* ✅ key fix: show section colors */
+}
+
+/* give topic card a subtle border so it reads nicely on warm bg */
+.topic-card{
+  border:1px solid rgba(0,0,0,0.06);
 }
 
 .topic-meta{
@@ -214,9 +227,9 @@ h3{
 }
 
 .topic-tag{
-  background:#fff;
+  background:rgba(255,255,255,0.85);
   padding:2px 8px;
-  border-radius:6px;
+  border-radius:7px;
   font-size:12px;
 }
 
@@ -244,18 +257,21 @@ h3{
 .cta-row{
   margin-top:10px;
   display:flex;
-  gap:8px;
+  gap:10px;
   flex-wrap:wrap;
 }
 
 .btn{
   text-decoration:none;
-  border:1px solid #ccc;
-  padding:6px 14px;
-  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.15);
+  padding:8px 14px;
+  border-radius:10px;
   font-size:14px;
   background:#fff;
   color:var(--text-main);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 }
 
 .btn.primary{
@@ -275,11 +291,11 @@ h3{
 
 /* ===== Responsive ===== */
 @media (max-width:900px){
-  .grid.topics{
-    grid-template-columns:1fr;
-  }
-
+  .grid.topics{ grid-template-columns:1fr; }
   h1{font-size:26px}
   h2{font-size:22px}
   h3{font-size:18px}
+
+  .hero-card{ padding:26px 20px 22px; }
+  .card{ padding:22px 18px; }
 }
