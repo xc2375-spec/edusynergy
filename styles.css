@@ -1,6 +1,6 @@
 /* =========================================
-   EduSynergy Global Style
-   Warm, elegant, bilingual
+   EduSynergy FINAL STYLE
+   Warm, bilingual, topic-color safe
    ========================================= */
 
 /* ===== Color System ===== */
@@ -10,14 +10,12 @@
   --text-main: #2c2c2c;
   --text-muted: #6a6a6a;
 
-  /* Warm sections */
-  --sec-network: #E8D9C5;   /* brand hero */
+  --sec-network: #E8D9C5;   /* hero */
   --sec-social:  #D9E4DD;   /* SEL */
   --sec-physics: #F1D6C6;   /* Physics */
   --sec-biology: #E3DDED;   /* Biology */
 
   --accent: #6b8fa3;
-  --accent-soft: #d6e4ec;
 
   --radius: 16px;
   --shadow: 0 6px 18px rgba(0,0,0,0.06);
@@ -32,7 +30,6 @@ html,body{
   line-height:1.65;
 }
 
-/* English elegant serif */
 body{
   font-family:
     Georgia,
@@ -40,17 +37,16 @@ body{
     "Palatino Linotype",
     Palatino,
     "Times New Roman",
-    Times,
     serif;
 }
 
-/* Chinese Fangsong priority (multi-platform fallbacks) */
+/* Chinese Fangsong */
 .zh{
   font-family:
-    "STFangsong",        /* macOS (if available) */
-    "FangSong",          /* common name */
-    "FangSong_GB2312",   /* Windows common */
-    "STSong",            /* fallback */
+    "STFangsong",
+    "FangSong",
+    "FangSong_GB2312",
+    "STSong",
     "Songti SC",
     "SimSun",
     serif;
@@ -64,7 +60,6 @@ body{
     "Palatino Linotype",
     Palatino,
     "Times New Roman",
-    Times,
     serif;
 }
 
@@ -75,6 +70,7 @@ body{
   padding:28px 20px 40px;
 }
 
+/* ===== Header ===== */
 .topbar{
   background:#fff;
   border-bottom:1px solid #eee;
@@ -94,36 +90,12 @@ body{
   letter-spacing:.5px;
 }
 
-.brand-mark{
-  margin-right:6px;
-}
-
 .brand-name-en{
   font-style:italic;
   opacity:.85;
 }
 
-.top-actions{
-  display:flex;
-  gap:12px;
-  align-items:center;
-}
-
-.navlink{
-  text-decoration:none;
-  color:var(--text-main);
-  font-size:14px;
-}
-
-.chip{
-  border:1px solid #ddd;
-  background:#fff;
-  padding:4px 10px;
-  border-radius:999px;
-  cursor:pointer;
-}
-
-/* ===== Sections Color Classes ===== */
+/* ===== Section Colors ===== */
 .section-network{ background:var(--sec-network); }
 .section-social{  background:var(--sec-social); }
 .section-physics{ background:var(--sec-physics); }
@@ -140,6 +112,7 @@ body{
   box-shadow:var(--shadow);
 }
 
+/* ===== Typography ===== */
 h1{
   font-size:32px;
   margin:0 0 12px;
@@ -163,33 +136,15 @@ h3{
   margin:0 0 18px;
 }
 
-.note{
-  background:rgba(255,255,255,0.55);
-  padding:14px 16px;
-  border-radius:12px;
-  margin:14px 0 18px;
+.muted{
+  color:var(--text-muted);
+  font-size:14px;
 }
 
-/* bilingual stack display */
 .stack .zh{display:block}
 .stack .en{display:block; opacity:.86}
 
-.pill-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:14px 0 18px;
-}
-
-.pill{
-  background:#fff;
-  border-radius:999px;
-  padding:6px 12px;
-  font-size:13px;
-  box-shadow:0 1px 3px rgba(0,0,0,0.08);
-}
-
-/* ===== Cards ===== */
+/* ===== White Card Containers ===== */
 .card{
   background:var(--card-bg);
   border-radius:var(--radius);
@@ -198,28 +153,35 @@ h3{
   margin-top:26px;
 }
 
-/* grid */
+/* ===== Topics Grid ===== */
 .grid.topics{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:22px;
 }
 
-/* topic card (IMPORTANT: allow section color to show) */
+/* ===== Topic Card (COLOR SAFE) ===== */
+/* works even if HTML still has class="card topic-card section-x" */
 .topic-card{
   padding:22px 18px 18px;
   border-radius:14px;
   display:flex;
   flex-direction:column;
   gap:8px;
-  background:transparent; /* ✅ key fix: show section colors */
-}
 
-/* give topic card a subtle border so it reads nicely on warm bg */
-.topic-card{
+  /* override white card background */
+  background:transparent !important;
+
+  box-shadow:var(--shadow);
   border:1px solid rgba(0,0,0,0.06);
 }
 
+/* ensure section color shows */
+.topic-card.section-social{  background:var(--sec-social) !important; }
+.topic-card.section-physics{ background:var(--sec-physics) !important; }
+.topic-card.section-biology{ background:var(--sec-biology) !important; }
+
+/* ===== Topic Meta ===== */
 .topic-meta{
   display:flex;
   gap:6px;
@@ -238,29 +200,23 @@ h3{
   color:var(--text-main);
 }
 
-.muted{
-  color:var(--text-muted);
-  font-size:14px;
+/* ===== Pills ===== */
+.pill-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:14px 0 18px;
 }
 
-.list{
-  margin:6px 0 8px 16px;
-  padding:0;
-}
-
-.list li{
-  margin:4px 0;
-  font-size:14px;
+.pill{
+  background:#fff;
+  border-radius:999px;
+  padding:6px 12px;
+  font-size:13px;
+  box-shadow:0 1px 3px rgba(0,0,0,0.08);
 }
 
 /* ===== Buttons ===== */
-.cta-row{
-  margin-top:10px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
 .btn{
   text-decoration:none;
   border:1px solid rgba(0,0,0,0.15);
@@ -269,9 +225,6 @@ h3{
   font-size:14px;
   background:#fff;
   color:var(--text-main);
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
 }
 
 .btn.primary{
